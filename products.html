@@ -4,181 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products - North Star Bakery</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body bgcolor="#f7efe7" text="#2b201b">
-    <center>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#fffaf3">
-            <tr>
-                <td bgcolor="#8b4d2a" align="center" height="90">
-                    <font face="Arial" size="6" color="#fffaf3"><b>Our Products</b></font>
-                </td>
-            </tr>
-            <tr>
-                <td bgcolor="#d9b38c" align="center" height="55">
-                    <font face="Arial" size="3" color="#2b201b">
-                        <nav aria-label="Main navigation">
-                            <table border="0" cellspacing="8" cellpadding="0">
-                                <tr>
-                                    <td bgcolor="#f7efe7" align="center" width="90" height="28"><a href="index.html"><font color="#2b201b"><b>Home</b></font></a></td>
-                                    <td bgcolor="#f7efe7" align="center" width="110" height="28"><a href="products.html"><font color="#2b201b"><b>Products</b></font></a></td>
-                                    <td bgcolor="#f7efe7" align="center" width="120" height="28"><a href="about.html"><font color="#2b201b"><b>About Us</b></font></a></td>
-                                    <td bgcolor="#f7efe7" align="center" width="100" height="28"><a href="contact.html"><font color="#2b201b"><b>Contact</b></font></a></td>
-                                </tr>
-                            </table>
-                        </nav>
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <table width="90%" align="center" border="0" cellpadding="20" cellspacing="0">
-                        <tr>
-                            <td bgcolor="#fffaf3" bordercolor="#d9b38c" style="border: 2px solid #d9b38c;">
-                                <main>
-                                    <section id="pricing-note">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="10" bgcolor="#fdf4ea">
-                                            <tr>
-                                                <td>
-                                                    <p><strong>Pricing Information:</strong> All prices listed below are approximate ranges. For exact pricing and availability, please contact North Star Bakery directly.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </section>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="bakery-icon.svg" alt="North Star Bakery icon">
+            <h1>North Star Bakery</h1>
+        </div>
+        <p class="tagline">Freshly Baked for Our Community</p>
+    </header>
 
-                                    <section id="breads">
-                                        <h2><font face="Arial" color="#8b4d2a">Breads</font></h2>
-                                        <p>Our breads are baked fresh daily using quality ingredients and traditional methods. Each loaf is a testament to our commitment to excellence.</p>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" class="active" aria-current="page">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-                                        <table width="100%" border="0" cellspacing="10" cellpadding="10">
-                                            <tr>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Sourdough loaf" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Sourdough Loaf</strong><br>
-                                                    Tangy, artisan-style loaf with a crisp crust and airy crumb.<br>
-                                                    <b>Price: $8</b>
-                                                </td>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Whole wheat bread" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Whole Wheat Bread</strong><br>
-                                                    Hearty and wholesome for everyday meals.<br>
-                                                    <b>Price: $7</b>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1549931314-a545dcf3bc73?auto=format&fit=crop&w=800&q=80" alt="Focaccia bread" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Focaccia</strong><br>
-                                                    Olive oil and herb topping with a soft center.<br>
-                                                    <b>Price: $6</b>
-                                                </td>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80" alt="Multigrain loaf" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Multigrain Loaf</strong><br>
-                                                    Nutrient-rich grains and seeds in every slice.<br>
-                                                    <b>Price: $8</b>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </section>
+    <main>
+        <section id="pricing-note" class="alt">
+            <p><strong>Pricing Information:</strong> All prices listed below are approximate ranges. For exact pricing and availability, please contact North Star Bakery directly.</p>
+        </section>
 
-                                    <section id="pastries">
-                                        <h2><font face="Arial" color="#8b4d2a">Pastries</font></h2>
-                                        <p>Handmade pastries that bring comfort and delight to every bite. Made with care and quality ingredients.</p>
+        <section id="breads">
+            <h2>Breads</h2>
+            <p>Our breads are baked fresh daily using quality ingredients and traditional methods. Each loaf is a testament to our commitment to excellence.</p>
 
-                                        <table width="100%" border="0" cellspacing="10" cellpadding="10">
-                                            <tr>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="Croissants" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Croissants</strong><br>
-                                                    Buttery, flaky, and absolutely irresistible.<br>
-                                                    <b>Price: $4</b>
-                                                </td>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Danish pastries" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Danish Pastries</strong><br>
-                                                    Sweet pastry with fruit or cream filling.<br>
-                                                    <b>Price: $5</b>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80" alt="Cinnamon rolls" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Cinnamon Rolls</strong><br>
-                                                    Soft, warm, and topped with sweet glaze.<br>
-                                                    <b>Price: $6</b>
-                                                </td>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=800&q=80" alt="Fruit tarts" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Fruit Tarts</strong><br>
-                                                    Crisp pastry shell filled with fresh fruit and cream.<br>
-                                                    <b>Price: $6</b>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </section>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Sourdough loaf">
+                    <strong>Sourdough Loaf</strong>
+                    <p>Tangy, artisan-style loaf with a crisp crust and airy crumb.</p>
+                    <p class="price">Price: $8</p>
+                </div>
 
-                                    <section id="cakes">
-                                        <h2><font face="Arial" color="#8b4d2a">Cakes</font></h2>
-                                        <p>Celebration cakes crafted for your special moments. From birthdays to anniversaries, we create custom designs to make your event memorable.</p>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Whole wheat bread">
+                    <strong>Whole Wheat Bread</strong>
+                    <p>Hearty and wholesome for everyday meals.</p>
+                    <p class="price">Price: $7</p>
+                </div>
 
-                                        <table width="100%" border="0" cellspacing="10" cellpadding="10">
-                                            <tr>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Chocolate layer cake" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Chocolate Layer Cake</strong><br>
-                                                    Rich, decadent, and indulgent.<br>
-                                                    <b>Price: $35</b>
-                                                </td>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=800&q=80" alt="Vanilla buttercream cake" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Vanilla Buttercream Cake</strong><br>
-                                                    Classic elegance with smooth, creamy frosting.<br>
-                                                    <b>Price: $30</b>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80" alt="Fruit cake" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Fruit Cake</strong><br>
-                                                    Studded with dried fruits and nuts for a festive finish.<br>
-                                                    <b>Price: $40</b>
-                                                </td>
-                                                <td width="50%" valign="top">
-                                                    <img src="https://images.unsplash.com/photo-1533134242443-d94f7c1e9d44?auto=format&fit=crop&w=800&q=80" alt="Custom celebration cake" border="3" bordercolor="#8b4d2a" width="250"><br>
-                                                    <strong>Custom Celebration Cake</strong><br>
-                                                    Personalized designs for birthdays, weddings, and special events.<br>
-                                                    <b>Price: $55+</b>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </section>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1549931314-a545dcf3bc73?auto=format&fit=crop&w=800&q=80" alt="Focaccia bread">
+                    <strong>Focaccia</strong>
+                    <p>Olive oil and herb topping with a soft center.</p>
+                    <p class="price">Price: $6</p>
+                </div>
 
-                                    <section id="pre-order-note">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="10" bgcolor="#f9ebdb">
-                                            <tr>
-                                                <td>
-                                                    <p>Interested in a custom cake or bulk order? Please use our contact form to submit a pre-order request or inquiry.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </section>
-                                </main>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td bgcolor="#5c3822" align="center" height="60">
-                    <font face="Arial" size="2" color="#fffaf3">
-                        <footer>
-                            <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
-                            <p>Freshly baked for our local community.</p>
-                        </footer>
-                    </font>
-                </td>
-            </tr>
-        </table>
-    </center>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80" alt="Multigrain loaf">
+                    <strong>Multigrain Loaf</strong>
+                    <p>Nutrient-rich grains and seeds in every slice.</p>
+                    <p class="price">Price: $8</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pastries">
+            <h2>Pastries</h2>
+            <p>Handmade pastries that bring comfort and delight to every bite. Made with care and quality ingredients.</p>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="Croissants">
+                    <strong>Croissants</strong>
+                    <p>Buttery, flaky, and absolutely irresistible.</p>
+                    <p class="price">Price: $4</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1633785587635-a5c1df91fa90?auto=format&fit=crop&w=800&q=80" alt="Danish pastries">
+                    <strong>Danish Pastries</strong>
+                    <p>Sweet pastry with fruit or cream filling.</p>
+                    <p class="price">Price: $5</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80" alt="Cinnamon rolls">
+                    <strong>Cinnamon Rolls</strong>
+                    <p>Soft, warm, and topped with sweet glaze.</p>
+                    <p class="price">Price: $6</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=800&q=80" alt="Fruit tarts">
+                    <strong>Fruit Tarts</strong>
+                    <p>Crisp pastry shell filled with fresh fruit and cream.</p>
+                    <p class="price">Price: $6</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cakes">
+            <h2>Cakes</h2>
+            <p>Celebration cakes crafted for your special moments. From birthdays to anniversaries, we create custom designs to make your event memorable.</p>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Chocolate layer cake">
+                    <strong>Chocolate Layer Cake</strong>
+                    <p>Rich, decadent, and indulgent.</p>
+                    <p class="price">Price: $35</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=800&q=80" alt="Vanilla buttercream cake">
+                    <strong>Vanilla Buttercream Cake</strong>
+                    <p>Classic elegance with smooth, creamy frosting.</p>
+                    <p class="price">Price: $30</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80" alt="Fruit cake">
+                    <strong>Fruit Cake</strong>
+                    <p>Studded with dried fruits and nuts for a festive finish.</p>
+                    <p class="price">Price: $40</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1533134242443-d94f7c1e9d44?auto=format&fit=crop&w=800&q=80" alt="Custom celebration cake">
+                    <strong>Custom Celebration Cake</strong>
+                    <p>Personalized designs for birthdays, weddings, and special events.</p>
+                    <p class="price">Price: $55+</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pre-order-note" class="alt">
+            <p>Interested in a custom cake or bulk order? Please use our contact form to submit a pre-order request or inquiry.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+        <p>Freshly baked for our local community.</p>
+    </footer>
 </body>
 </html>
