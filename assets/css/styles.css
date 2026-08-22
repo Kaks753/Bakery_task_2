@@ -205,9 +205,7 @@ button { font: inherit; cursor: pointer; }
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(251, 243, 230, .86);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(251, 243, 230, .96);
     border-bottom: 1px solid transparent;
     transition: border-color .2s ease, box-shadow .2s ease;
 }

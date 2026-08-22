@@ -46,10 +46,7 @@
 
             // Focus trap while the drawer is open
             if (e.key === "Tab") {
-                const focusables = Array.from(
-                    header.querySelectorAll("a[href], button")
-                ).filter((el) => el.offsetParent !== null || el === toggle);
-                if (!focusables.length) return;
+                const focusables = [toggle, ...nav.querySelectorAll("a[href]")];
                 const first = focusables[0];
                 const last = focusables[focusables.length - 1];
                 if (e.shiftKey && document.activeElement === first) {
