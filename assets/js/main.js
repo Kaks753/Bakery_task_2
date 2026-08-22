@@ -17,6 +17,12 @@
             header.classList.toggle("nav-open", open);
             toggle.setAttribute("aria-expanded", String(open));
             document.body.style.overflow = open ? "hidden" : "";
+            if (open) {
+                const firstLink = nav.querySelector("a");
+                if (firstLink) setTimeout(() => firstLink.focus(), 120);
+            } else {
+                toggle.focus();
+            }
         };
 
         toggle.addEventListener("click", () => {
@@ -28,7 +34,30 @@
         });
 
         document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") setOpen(false);
+            if (e.key === "Escape" && header.classList.contains("nav-open")) setOpen(false);
+
+            // Focus trap while the mobile menu is open
+            if (e.key === "Tab" && header.classList.contains("nav-open")) {
+                const focusables = header.querySelectorAll("a[href], button");
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
+        });
+
+        // Close if resized up to desktop
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 700 && header.classList.contains("nav-open")) {
+                header.classList.remove("nav-open");
+                toggle.setAttribute("aria-expanded", "false");
+                document.body.style.overflow = "";
+            }
         });
     }
 
@@ -58,6 +87,23 @@
         revealEls.forEach((el) => io.observe(el));
     } else {
         revealEls.forEach((el) => el.classList.add("in-view"));
+    }
+
+    // Back to top
+    const toTop = document.querySelector("[data-to-top]");
+
+    if (toTop) {
+        const toggleToTop = () => {
+            const show = window.scrollY > 600;
+            toTop.classList.toggle("is-visible", show);
+            toTop.setAttribute("aria-hidden", String(!show));
+            toTop.tabIndex = show ? 0 : -1;
+        };
+        toggleToTop();
+        window.addEventListener("scroll", toggleToTop, { passive: true });
+        toTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     }
 
     // Menu category filters
