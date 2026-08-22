@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Crumb &amp; Ember">
+  <defs>
+    <linearGradient id="emberGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E9A13B"/>
+      <stop offset="55%" stop-color="#D96C3D"/>
+      <stop offset="100%" stop-color="#C4502E"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#emberGrad)" d="M32 4c1.6 8-9 13.5-9 24a11.6 11.6 0 0 0 23.2 0c0-4.7-2.6-8.3-5.2-12-.5 3.7-2.1 5.6-4.2 6.3C38.4 16.6 36.4 9.6 32 4z"/>
+  <path fill="#FBF3E6" opacity=".35" d="M32 26c1.5 3.2 5 5 5 8.6 0 2.9-2.1 4.9-5 4.9s-5-2-5-4.9C27 31 30.5 29.2 32 26z"/>
+  <circle cx="14" cy="53" r="3" fill="#B07B50"/>
+  <circle cx="24" cy="58" r="2.1" fill="#8A5A3B"/>
+  <circle cx="34" cy="56.5" r="2.6" fill="#B07B50"/>
+  <circle cx="45" cy="57" r="1.9" fill="#D88C5A"/>
+  <circle cx="53" cy="52.5" r="2.5" fill="#8A5A3B"/>
+</svg>

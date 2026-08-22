@@ -3,60 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About North Star Bakery - Our Story</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Our Story — Crumb &amp; Ember</title>
+    <meta name="description" content="How a secondhand mixer and one hand-built brick oven became Crumb & Ember — the wood-fired bakery on Mill Lane. Meet the bakers behind the crust.">
+    <meta name="theme-color" content="#241A14">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Crumb &amp; Ember">
+    <meta property="og:title" content="Our Story — Crumb &amp; Ember">
+    <meta property="og:description" content="One oven, lit every morning at four. Meet the bakers behind the crust.">
+    <meta property="og:image" content="assets/img/kneading.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="brand">
-            <img src="bakery-icon.svg" alt="North Star Bakery icon">
-            <h1>North Star Bakery</h1>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Crumb and Ember — home">
+                <img src="assets/img/logo.svg" alt="" width="36" height="36">
+                <span class="brand-name">Crumb&nbsp;<span class="amp">&amp;</span>&nbsp;Ember</span>
+            </a>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-box" aria-hidden="true"><i></i><i></i></span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+            <nav id="site-nav" class="site-nav" data-nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Menu</a></li>
+                    <li><a href="about.html" aria-current="page">Our Story</a></li>
+                    <li><a href="contact.html">Visit</a></li>
+                    <li><a class="btn btn-primary btn-sm" href="contact.html#order">Order ahead</a></li>
+                </ul>
+            </nav>
         </div>
-        <p class="tagline">Freshly Baked for Our Community</p>
     </header>
 
-    <nav class="main-nav" aria-label="Main navigation">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="bakery-story">
-            <h2>Our Bakery Story</h2>
-            <p>North Star Bakery is rooted in a deep commitment to serving our neighborhood with warmth, quality, and genuine connection. We believe that a neighborhood bakery is more than just a place to buy bread—it's a gathering place where community comes together.</p>
-            <p>Every morning, we arrive early to prepare fresh, handmade goods using quality ingredients and time-honored techniques. We take pride in knowing our customers by name, understanding their preferences, and creating baked goods that bring joy to their families and celebrations.</p>
-            <p>Our mission is simple: provide our local community with the freshest, most carefully prepared bakery products while building lasting relationships with everyone who walks through our door.</p>
+    <main id="main">
+        <section class="page-hero page-hero-story">
+            <div class="container">
+                <p class="eyebrow eyebrow-light">Since 2017</p>
+                <h1>One oven,<br>lit at four each morning.</h1>
+                <p>The story of Crumb &amp; Ember is mostly flour, fire and stubbornness.</p>
+            </div>
         </section>
 
-        <section id="sourcing-philosophy" class="alt">
-            <h2>Our Sourcing Philosophy</h2>
-            <p>We believe that quality starts with ingredients. North Star Bakery carefully selects suppliers who share our values of quality and reliability. We work with trusted local and regional vendors whenever possible to ensure consistency and freshness in every product we bake.</p>
-            <p>Our approach focuses on using quality flour, real butter, fresh eggs, and other ingredients that meet our standards for taste and nutrition. We avoid artificial additives and colorings, instead relying on traditional recipes and genuine preparation methods that have proven themselves over time.</p>
+        <section class="section">
+            <div class="container split">
+                <figure class="split-media reveal">
+                    <img src="assets/img/kneading.jpg" alt="Hands shaping dough on a floured wooden bench" loading="lazy" width="1200" height="800">
+                </figure>
+                <div class="split-body">
+                    <p class="eyebrow">How it started</p>
+                    <h2>A secondhand mixer and a pile of bricks.</h2>
+                    <p>In 2017 we traded a reliable paycheck for a secondhand spiral mixer and a summer of sore arms, building a small brick oven in the back of a rented storefront on Mill Lane.</p>
+                    <p>We had one rule then, and it still holds: nothing leaves the counter that we wouldn't happily eat standing up, still warm, straight from the bench.</p>
+                    <p>The first winter we sold eleven loaves a day. Now we sell out by ten — but the first bake still goes to whoever queued outside in the dark.</p>
+                </div>
+            </div>
         </section>
 
-        <section id="staff-highlights">
-            <h2>Our Team</h2>
-            <p>North Star Bakery is staffed by dedicated professionals who take pride in their craft:</p>
-            <ul>
-                <li><strong>Head Baker</strong> - Leads daily production and ensures quality standards are met in every batch</li>
-                <li><strong>Pastry Team</strong> - Specializes in handcrafted pastries and custom cake designs</li>
-                <li><strong>Customer Service Team</strong> - Greets customers with warmth and helps fulfill pre-orders and special requests</li>
-            </ul>
-            <p>Every team member is committed to delivering excellence and creating a welcoming experience for our community.</p>
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">What we stand on</p>
+                    <h2>Four things we'll never compromise</h2>
+                </div>
+                <ul class="values-grid values-grid-4" role="list">
+                    <li class="value-card reveal">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4-5 6.5-5 11a5 5 0 0 0 10 0c0-2.2-1.2-3.8-2.4-5.4-.3 1.7-1.1 2.6-2 3C13.3 8 13 4.8 12 2z"/></svg>
+                        <h3>Fire</h3>
+                        <p>Everything meets real flame. It costs us time and buys us flavor.</p>
+                    </li>
+                    <li class="value-card reveal">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22v-8m0 0c0-4-3-6-7-6 0 4 3 6 7 6zm0 0c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3.5 0-6-2-9m2 9c0-3.5 0-6 2-9"/></svg>
+                        <h3>Flour</h3>
+                        <p>Stone-milled regional grain, milled weekly. We know the farmers' names.</p>
+                    </li>
+                    <li class="value-card reveal">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                        <h3>Patience</h3>
+                        <p>Cold rooms, long ferments, no shortcuts. Flavor is just time made edible.</p>
+                    </li>
+                    <li class="value-card reveal">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-8 0v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm9 10v-2a4 4 0 0 0-3-3.87M3 19v-2a4 4 0 0 1 3-3.87"/></svg>
+                        <h3>Community</h3>
+                        <p>Day-old goes to the neighborhood kitchen. Coffee's free if you need it.</p>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <section id="about-image" class="featured">
-            <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=900&q=80" alt="North Star Bakery storefront, inviting customers into our neighborhood bakery">
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">The people</p>
+                    <h2>Small team, strong forearms</h2>
+                </div>
+                <div class="team-grid">
+                    <article class="team-card reveal">
+                        <span class="avatar" style="--tint:#D96C3D">MO</span>
+                        <h3>Maya Okafor</h3>
+                        <p class="team-role">Head baker · Co-founder</p>
+                        <p>Keeps the sourdough starter (named Doris, est. 2017) alive and the oven honest.</p>
+                    </article>
+                    <article class="team-card reveal">
+                        <span class="avatar" style="--tint:#E9A13B">DR</span>
+                        <h3>Daniel Reyes</h3>
+                        <p class="team-role">Pastry lead</p>
+                        <p>Laminates three days ahead of you craving a croissant. Yes, that's a flex.</p>
+                    </article>
+                    <article class="team-card reveal">
+                        <span class="avatar" style="--tint:#8A5A3B">PS</span>
+                        <h3>Priya Sharma</h3>
+                        <p class="team-role">Counter &amp; wholesale</p>
+                        <p>Remembers your usual before you say it. Runs pre-orders like air traffic control.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-band">
+            <div class="container cta-inner">
+                <div>
+                    <h2>Come stand in the queue once.</h2>
+                    <p>After one warm loaf, you'll understand why people do it daily.</p>
+                </div>
+                <a class="btn btn-light btn-lg" href="contact.html#order">Reserve tomorrow's bread</a>
+            </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
-        <p>Freshly baked for our local community.</p>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a class="brand brand-light" href="index.html">
+                    <img src="assets/img/logo.svg" alt="" width="34" height="34">
+                    <span class="brand-name">Crumb&nbsp;<span class="amp">&amp;</span>&nbsp;Ember</span>
+                </a>
+                <p>Small-batch bread and pastry from a single wood-fired oven. Pre-order by 8 PM for next-morning pickup.</p>
+                <ul class="socials" role="list">
+                    <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg></a></li>
+                    <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V5h-3a4 4 0 0 0-4 4v2H7v3h3v-7h3l1-3h-4V9a1 1 0 0 1 1-1z"/></svg></a></li>
+                    <li><a href="#" aria-label="Email newsletter"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+                </ul>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <h3>Explore</h3>
+                <ul role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Menu</a></li>
+                    <li><a href="about.html">Our story</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer-hours">
+                <h3>Hours</h3>
+                <dl>
+                    <div><dt>Tue – Fri</dt><dd>7:00 – 18:00</dd></div>
+                    <div><dt>Saturday</dt><dd>8:00 – 17:00</dd></div>
+                    <div><dt>Sunday</dt><dd>8:00 – 14:00</dd></div>
+                    <div><dt>Monday</dt><dd>Oven rests</dd></div>
+                </dl>
+            </div>
+            <div class="footer-findus">
+                <h3>Find us</h3>
+                <address>
+                    12 Mill Lane, Old Town<br>
+                    <a href="mailto:hello@crumbandember.example">hello@crumbandember.example</a><br>
+                    <a href="tel:+15551234567">(555) 123-4567</a>
+                </address>
+            </div>
+        </div>
+        <div class="container footer-base">
+            <p>© <span data-year>2026</span> Crumb &amp; Ember Bakery. All rights reserved.</p>
+            <p class="footer-note">Baked with patience.</p>
+        </div>
     </footer>
+
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

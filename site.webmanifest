@@ -1,0 +1,17 @@
+{
+  "name": "Crumb & Ember",
+  "short_name": "Crumb & Ember",
+  "description": "Wood-fired artisan bakery — slow-fermented bread and pastry, baked daily before sunrise.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FBF3E6",
+  "theme_color": "#241A14",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
