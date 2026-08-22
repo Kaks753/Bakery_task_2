@@ -258,21 +258,22 @@ button { font: inherit; cursor: pointer; }
 
 .nav-toggle-box {
     display: grid;
-    gap: 5px;
+    gap: 4.5px;
     place-content: center;
 }
 
 .nav-toggle i {
     display: block;
-    width: 20px;
+    width: 18px;
     height: 2px;
     background: var(--ink);
     border-radius: 2px;
-    transition: transform .25s ease;
+    transition: transform .28s ease, opacity .2s ease;
 }
 
-.nav-open .nav-toggle i:first-child { transform: translateY(3.5px) rotate(45deg); }
-.nav-open .nav-toggle i:last-child  { transform: translateY(-3.5px) rotate(-45deg); }
+.nav-open .nav-toggle i:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-open .nav-toggle i:nth-child(2) { opacity: 0; transform: scaleX(.4); }
+.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 .site-nav ul {
     display: flex;
