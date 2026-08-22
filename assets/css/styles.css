@@ -321,7 +321,7 @@ body.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(
     text-align: center;
     background:
         linear-gradient(180deg, rgba(20, 12, 8, .62) 0%, rgba(20, 12, 8, .45) 45%, rgba(20, 12, 8, .72) 100%),
-        url("../img/hero-bread.jpg") center / cover no-repeat;
+        url("../img/hero-bread.webp") center / cover no-repeat;
 }
 
 .hero-inner { max-width: 760px; }
@@ -373,13 +373,13 @@ body.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(
     text-align: center;
     background:
         linear-gradient(180deg, rgba(20, 12, 8, .66) 0%, rgba(20, 12, 8, .74) 100%),
-        url("../img/display.jpg") center / cover no-repeat;
+        url("../img/display.webp") center / cover no-repeat;
 }
 
 .page-hero-story {
     background:
         linear-gradient(180deg, rgba(20, 12, 8, .66) 0%, rgba(20, 12, 8, .74) 100%),
-        url("../img/kneading.jpg") center / cover no-repeat;
+        url("../img/kneading.webp") center / cover no-repeat;
 }
 
 .page-hero h1 {
@@ -872,13 +872,13 @@ body.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(
 
 /* ---------- Reveal animations ---------- */
 
-.reveal {
+html.js .reveal {
     opacity: 0;
     transform: translateY(16px);
     transition: opacity .55s ease, transform .55s ease;
 }
 
-.reveal.in-view {
+html.js .reveal.in-view {
     opacity: 1;
     transform: none;
 }
@@ -958,6 +958,18 @@ body.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(
 .page-hero-plain p {
     color: rgba(255, 253, 248, .65);
     font-size: .92rem;
+}
+
+/* ---------- 404 ---------- */
+
+.error-panel { text-align: center; }
+
+.error-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .9rem;
+    margin-top: 1.6rem;
 }
 
 /* ---------- Legal prose ---------- */
@@ -1043,7 +1055,7 @@ body.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(
         gap: 1.15rem;
     }
 
-    .site-nav a:not(.btn):not(.nav-reach a):not(.socials a) {
+    .site-nav ul a:not(.btn) {
         font-family: var(--font-display);
         font-size: 1.55rem;
         color: #FBF3E6;
@@ -1056,46 +1068,35 @@ body.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(
     /* Drawer extras */
     .nav-extra {
         display: grid;
-        gap: 1.35rem;
+        gap: 1.1rem;
         margin-top: 2.2rem;
-        padding-top: 1.7rem;
+        padding-top: 1.6rem;
         border-top: 1px solid rgba(251, 243, 230, .14);
     }
 
-    .nav-legal {
+    .drawer-tel {
         display: flex;
-        flex-wrap: wrap;
-        gap: .4rem 1.4rem;
-    }
-
-    .nav-legal a {
-        font-size: .88rem;
-        color: rgba(251, 243, 230, .62);
-        text-decoration: none;
-    }
-
-    .nav-legal a:hover { color: var(--honey); }
-
-    .nav-reach {
-        display: grid;
-        gap: .3rem;
-        font-size: .93rem;
-    }
-
-    .nav-reach a {
+        align-items: center;
+        justify-content: center;
+        gap: .6rem;
+        font-weight: 600;
+        font-size: .98rem;
         color: #FBF3E6;
-        font-weight: 500;
         text-decoration: none;
+        transition: color .15s ease;
     }
 
-    .nav-reach span {
-        color: rgba(251, 243, 230, .55);
-        font-size: .84rem;
-        line-height: 1.5;
+    .drawer-tel svg {
+        width: 17px;
+        height: 17px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
 
-    .nav-extra .socials { margin-top: .1rem; }
-    .nav-extra .socials a { width: 38px; height: 38px; }
+    .drawer-tel:hover { color: var(--honey); }
 
     /* Staggered entrance */
     .site-nav ul li,
@@ -1118,7 +1119,6 @@ body.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(
     body.nav-open .site-nav ul li:nth-child(5) { transition-delay: .28s; }
     body.nav-open .nav-extra > *:nth-child(1) { transition-delay: .34s; }
     body.nav-open .nav-extra > *:nth-child(2) { transition-delay: .40s; }
-    body.nav-open .nav-extra > *:nth-child(3) { transition-delay: .46s; }
 
     .section-head { flex-direction: column; align-items: flex-start; }
 
@@ -1148,5 +1148,4 @@ body.nav-open .nav-toggle i:nth-child(3) { transform: translateY(-6.5px) rotate(
         transition-duration: .01ms !important;
     }
 
-    .reveal { opacity: 1; transform: none; }
-}
+    html.js .reveal { opacity: 1; transform: none; }}
