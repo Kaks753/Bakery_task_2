@@ -13,32 +13,43 @@
     const nav = document.querySelector("[data-nav]");
 
     if (header && toggle && nav) {
+        const backdrop = document.querySelector("[data-nav-backdrop]");
+        const isOpen = () => document.body.classList.contains("nav-open");
+
         const setOpen = (open) => {
-            header.classList.toggle("nav-open", open);
+            document.body.classList.toggle("nav-open", open);
             toggle.setAttribute("aria-expanded", String(open));
             document.body.style.overflow = open ? "hidden" : "";
             if (open) {
                 const firstLink = nav.querySelector("a");
-                if (firstLink) setTimeout(() => firstLink.focus(), 120);
-            } else {
-                toggle.focus();
+                if (firstLink) setTimeout(() => firstLink.focus(), 160);
             }
         };
 
-        toggle.addEventListener("click", () => {
-            setOpen(!header.classList.contains("nav-open"));
-        });
+        toggle.addEventListener("click", () => setOpen(!isOpen()));
+
+        if (backdrop) {
+            backdrop.addEventListener("click", () => setOpen(false));
+        }
 
         nav.addEventListener("click", (e) => {
             if (e.target.closest("a")) setOpen(false);
         });
 
         document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && header.classList.contains("nav-open")) setOpen(false);
+            if (!isOpen()) return;
 
-            // Focus trap while the mobile menu is open
-            if (e.key === "Tab" && header.classList.contains("nav-open")) {
-                const focusables = header.querySelectorAll("a[href], button");
+            if (e.key === "Escape") {
+                setOpen(false);
+                toggle.focus();
+            }
+
+            // Focus trap while the drawer is open
+            if (e.key === "Tab") {
+                const focusables = Array.from(
+                    header.querySelectorAll("a[href], button")
+                ).filter((el) => el.offsetParent !== null || el === toggle);
+                if (!focusables.length) return;
                 const first = focusables[0];
                 const last = focusables[focusables.length - 1];
                 if (e.shiftKey && document.activeElement === first) {
@@ -53,10 +64,8 @@
 
         // Close if resized up to desktop
         window.addEventListener("resize", () => {
-            if (window.innerWidth > 700 && header.classList.contains("nav-open")) {
-                header.classList.remove("nav-open");
-                toggle.setAttribute("aria-expanded", "false");
-                document.body.style.overflow = "";
+            if (window.innerWidth > 700 && isOpen()) {
+                setOpen(false);
             }
         });
     }
