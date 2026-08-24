@@ -1,18 +1,22 @@
 (() => {
     "use strict";
 
-    const header = document.querySelector("[data-header]");
+    const header = () => document.querySelector("[data-header]");
+    const navToggle = () => document.querySelector("[data-nav-toggle]");
+    const nav = () => document.querySelector("[data-nav]");
 
     // Footer year
     document.querySelectorAll("[data-year]").forEach((el) => {
         el.textContent = new Date().getFullYear();
     });
 
-    // Mobile navigation
-    const toggle = document.querySelector("[data-nav-toggle]");
-    const nav = document.querySelector("[data-nav]");
+    // Mobile navigation — wired up once the <site-header> component has rendered.
+    const bindNav = () => {
+        const toggle = navToggle();
+        const navEl = nav();
 
-    if (header && toggle && nav) {
+        if (!header() || !toggle || !navEl || navEl.dataset.bound) return;
+
         const backdrop = document.querySelector("[data-nav-backdrop]");
         const isOpen = () => document.body.classList.contains("nav-open");
 
@@ -21,7 +25,7 @@
             toggle.setAttribute("aria-expanded", String(open));
             document.body.style.overflow = open ? "hidden" : "";
             if (open) {
-                const firstLink = nav.querySelector("a");
+                const firstLink = navEl.querySelector("a");
                 if (firstLink) setTimeout(() => firstLink.focus(), 160);
             }
         };
@@ -32,7 +36,7 @@
             backdrop.addEventListener("click", () => setOpen(false));
         }
 
-        nav.addEventListener("click", (e) => {
+        navEl.addEventListener("click", (e) => {
             if (e.target.closest("a")) setOpen(false);
         });
 
@@ -46,7 +50,7 @@
 
             // Focus trap while the drawer is open
             if (e.key === "Tab") {
-                const focusables = [toggle, ...nav.querySelectorAll("a[href]")];
+                const focusables = [toggle, ...navEl.querySelectorAll("a[href]")];
                 const first = focusables[0];
                 const last = focusables[focusables.length - 1];
                 if (e.shiftKey && document.activeElement === first) {
@@ -65,16 +69,32 @@
                 setOpen(false);
             }
         });
-    }
+
+        navEl.dataset.bound = "true";
+    };
 
     // Header shadow on scroll
-    if (header) {
+    const bindHeaderScroll = () => {
+        const h = header();
+        if (!h || h.dataset.scrollBound) return;
+        h.dataset.scrollBound = "true";
         const onScroll = () => {
-            header.classList.toggle("is-scrolled", window.scrollY > 8);
+            h.classList.toggle("is-scrolled", window.scrollY > 8);
         };
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
-    }
+    };
+
+    const bindComponents = () => {
+        bindNav();
+        bindHeaderScroll();
+    };
+
+    // Custom elements upgrade and render synchronously, but main.js may run
+    // before the header/footer exist, so attempt immediately and again on
+    // DOMContentLoaded to be safe across loading orders.
+    bindComponents();
+    document.addEventListener("DOMContentLoaded", bindComponents);
 
     // Scroll reveal
     const revealEls = document.querySelectorAll(".reveal");

@@ -201,6 +201,13 @@ button { font: inherit; cursor: pointer; }
 
 /* ---------- Header & nav ---------- */
 
+/* Web components render the shared header/footer. They must be block-level
+   so their inner layout (sticky header, full-width footer) behaves as before. */
+site-header,
+site-footer {
+    display: block;
+}
+
 .site-header {
     position: sticky;
     top: 0;
