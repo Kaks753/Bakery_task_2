@@ -1,187 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script>document.documentElement.classList.add('js');</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu — Crumb &amp; Ember</title>
-    <meta name="description" content="Our daily bakes: signature sourdough, croissants, morning buns, brown-butter cookies and celebration cakes. Pre-orders close at 8 PM for next-morning pickup.">
-    <meta name="theme-color" content="#241A14">
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="manifest" href="site.webmanifest">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Crumb &amp; Ember">
-    <meta property="og:title" content="Menu — Crumb &amp; Ember">
-    <meta property="og:description" content="Sourdough, laminated pastry and celebration cakes from a single wood-fired oven.">
-    <meta property="og:image" content="https://crumb-and-ember-ten.vercel.app/assets/img/display.webp">
-    <meta property="og:url" content="https://crumb-and-ember-ten.vercel.app/products.html">
-    <link rel="canonical" href="https://crumb-and-ember-ten.vercel.app/products.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Crumb &amp; Ember</title>
+  <meta name="description" content="Our daily bakes: signature sourdough, croissants, morning buns, brown-butter cookies and celebration cakes. Pre-orders close at 8 PM for next-morning pickup.">
+  <meta name="theme-color" content="#241A14">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Crumb &amp; Ember">
+  <meta property="og:title" content="Menu — Crumb &amp; Ember">
+  <meta property="og:description" content="Sourdough, laminated pastry and celebration cakes from a single wood-fired oven.">
+  <meta property="og:image" content="https://crumb-and-ember-ten.vercel.app/assets/img/display.webp">
+  <meta property="og:url" content="https://crumb-and-ember-ten.vercel.app/products.html">
+  <link rel="canonical" href="https://crumb-and-ember-ten.vercel.app/products.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .cart-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #241A14;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    .cart-icon:hover {
+      opacity: 0.9;
+    }
+    .cart-popover {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      right: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 16px;
+    }
+    .cart-popover.active {
+      display: block;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+    }
+  </style>
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <site-header current="products"></site-header>
-
-    <main id="main">
-        <section class="page-hero">
-            <div class="container">
-                <p class="eyebrow eyebrow-light">The menu</p>
-                <h1>Baked before sunrise,<br>sold until it's gone.</h1>
-                <p>The counter changes daily with the oven's mood. These are the regulars — pre-order to guarantee yours.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  
+  <site-header current="products"></site-header>
+  
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow eyebrow-light">The menu</p>
+        <h1>Baked before sunrise,<br>sold until it's gone.</h1>
+        <p>The counter changes daily with the oven's mood. These are the regulars — pre-order to guarantee yours.</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar" role="group" aria-label="Filter menu by category">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All bakes</button>
+          <button class="chip" type="button" data-filter="breads" aria-pressed="false">Breads</button>
+          <button class="chip" type="button" data-filter="pastries" aria-pressed="false">Pastries</button>
+          <button class="chip" type="button" data-filter="cakes" aria-pressed="false">Cakes</button>
+          <button class="chip" type="button" data-filter="deals" aria-pressed="false">Specials</button>
+        </div>
+        
+        <div class="card-grid menu-grid">
+          <article class="product-card reveal" data-category="breads">
+            <div class="product-media">
+              <img src="assets/img/sourdough.webp" alt="Ember Sourdough — seeded artisan loaves on a dark wooden counter" loading="lazy" width="900" height="598">
+              <button class="add-to-cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
+                Add to Cart
+              </button>
             </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="filter-bar" role="group" aria-label="Filter menu by category">
-                    <button class="chip" type="button" data-filter="all" aria-pressed="true">All bakes</button>
-                    <button class="chip" type="button" data-filter="breads" aria-pressed="false">Breads</button>
-                    <button class="chip" type="button" data-filter="pastries" aria-pressed="false">Pastries</button>
-                    <button class="chip" type="button" data-filter="cakes" aria-pressed="false">Cakes</button>
-                </div>
-                <p class="currency-note"><strong>International?</strong> Prices are in US dollars. We ship preserved goods — cookies, granola, celebration kits — worldwide; fresh bakes are pickup-only, with local delivery quoted per order on <a href="https://wa.me/255740383245" target="_blank" rel="noopener">WhatsApp</a>.</p>
-
-                <div class="card-grid menu-grid">
-                    <article class="product-card reveal" data-category="breads">
-                        <div class="product-media">
-                            <img src="assets/img/sourdough.webp" alt="Ember Sourdough — seeded artisan loaves on a dark wooden counter" loading="lazy" width="900" height="598">
-                            <span class="price-pill">$9.00</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Naturally leavened · 48h ferment</p>
-                            <h3>Ember Sourdough</h3>
-                            <p>Deep mahogany crust, open crumb, a gentle tang. Our signature since day one.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="breads">
-                        <div class="product-media">
-                            <img src="assets/img/baguettes.webp" alt="Traditional baguettes in a paper sleeve" loading="lazy" width="900" height="1350">
-                            <span class="price-pill">$4.00</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Stone-milled white flour</p>
-                            <h3>Baguette Tradition</h3>
-                            <p>Crisp shell, custardy interior. Out of the oven at 7 sharp.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="pastries">
-                        <div class="product-media">
-                            <img src="assets/img/croissant.webp" alt="Croissant au beurre dusted with sugar on slate" loading="lazy" width="900" height="720">
-                            <span class="price-pill">$4.50</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Laminated over 3 days</p>
-                            <h3>Croissant au Beurre</h3>
-                            <p>Cultured butter folded through again and again, so it shatters exactly right.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="pastries">
-                        <div class="product-media">
-                            <img src="assets/img/cinnamon.webp" alt="Morning buns glazed with brown sugar" loading="lazy" width="900" height="600">
-                            <span class="price-pill">$5.00</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Cardamom &amp; brown sugar</p>
-                            <h3>Morning Bun</h3>
-                            <p>Saturday's most argued-over item. Sticky, spiced, unapologetic.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="pastries">
-                        <div class="product-media">
-                            <img src="assets/img/cookies.webp" alt="Stack of brown butter chocolate chunk cookies" loading="lazy" width="900" height="1126">
-                            <span class="price-pill">$3.50</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Baked in small batches</p>
-                            <h3>Brown-Butter Cookie</h3>
-                            <p>Chocolate chunk, flaky salt, edges like toffee. Two per person, we mean it.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="pastries">
-                        <div class="product-media">
-                            <img src="assets/img/donut.webp" alt="Chocolate glazed donuts stacked on a plate" loading="lazy" width="900" height="1125">
-                            <span class="price-pill">$3.00</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Fried every morning</p>
-                            <h3>Chocolate Ember Donut</h3>
-                            <p>Brioche dough, dark chocolate glaze set against a whisper of smoked salt.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="pastries">
-                        <div class="product-media">
-                            <img src="assets/img/coffee.webp" alt="Flat white coffee served beside a croissant" loading="lazy" width="900" height="600">
-                            <span class="price-pill">$6.50</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">The classic pairing</p>
-                            <h3>Flat White &amp; Croissant Set</h3>
-                            <p>Single-origin espresso pulled over silk-steamed milk, with any counter croissant.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="cakes">
-                        <div class="product-media">
-                            <img src="assets/img/cake.webp" alt="Slice of midnight chocolate cake on a plate" loading="lazy" width="900" height="662">
-                            <span class="price-pill">from $46</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Pre-order only</p>
-                            <h3>Midnight Chocolate Cake</h3>
-                            <p>Blackout cocoa, espresso syrup, whipped ganache. Slices daily; whole cakes by request.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="cakes">
-                        <div class="product-media">
-                            <img src="assets/img/strawberry.webp" alt="Strawberry layer cake with cream on a plate" loading="lazy" width="900" height="1125">
-                            <span class="price-pill">$6.50</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Weekend special</p>
-                            <h3>Strawberry Cloud Slice</h3>
-                            <p>Vanilla sponge, whipped mascarpone, macerated berries. Fri–Sun only, while they last.</p>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal" data-category="cakes">
-                        <div class="product-media">
-                            <img src="assets/img/birthday.webp" alt="Celebration cake topped with candles and berries" loading="lazy" width="900" height="821">
-                            <span class="price-pill">from $52</span>
-                        </div>
-                        <div class="product-body">
-                            <p class="tagline-tag">Pre-order · 5 days ahead</p>
-                            <h3>Berry Vanilla Celebration Cake</h3>
-                            <p>Tall, generous, candle-ready. Tell us the occasion — we'll letter it by hand.</p>
-                        </div>
-                    </article>
-                </div>
-
-                <aside class="menu-note">
-                    <h2>Baker's Choice Box — $24</h2>
-                    <p>Can't decide? Let the oven decide for you: a rotating box of the day's best — bread, two pastries, a cookie, and whatever came out of the pan last. Order by 8 PM, collect warm.</p>
-                    <a class="btn btn-primary" href="contact.html#order">Reserve a box</a>
-                </aside>
+            <div class="product-body">
+              <p class="tagline-tag">Naturally leavened · 48h ferment</p>
+              <h3>Ember Sourdough</h3>
+              <p>Deep mahogany crust, open crumb, a gentle tang. Our signature since day one.</p>
             </div>
-        </section>
-    </main>
-
-<site-footer></site-footer>
-
-    <button class="to-top" type="button" data-to-top aria-hidden="true" tabindex="-1">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-6 6m6-6 6 6"/></svg>
-    </button>
-
-    <script src="assets/js/site-components.js" defer></script>
-    <script src="assets/js/main.js" defer></script></body>
+          </article>
+          
+          <!-- Other product cards with add-to-cart buttons -->
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <button class="cart-icon" id="cart-btn">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4-5 6.5-5 11a5 5 0 0 0 10 0c0-2.2-1.2-3.8-2.4-5.4-.3 1.7-1.1 2.6-2 3C13.3 8 13 4.8 12 2z"/></svg>
+    <span id="cart-count" class="cart-count"></span>
+  </button>
+  
+  <div class="cart-popover" id="cart-popover">
+    <h3>Your Cart</h3>
+    <div id="cart-items" class="cart-items">
+      <!-- Cart items will be inserted here -->
+    </div>
+    <p id="cart-total"></p>
+    <a class="btn btn-primary" href="contact.html#order">Proceed to Checkout</a>
+  </div>
+  
+  <script src="assets/js/site-components.js" defer></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js" defer></script>
+<script src="https://js.stripe.com/v3"></script>
+</body>
 </html>
