@@ -20,42 +20,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <style>
-    .cart-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #241A14;
-      color: #fff;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: opacity 0.3s;
-    }
-    .cart-icon:hover {
-      opacity: 0.9;
-    }
-    .cart-popover {
-      display: none;
-      position: absolute;
-      bottom: 100%;
-      right: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      width: 300px;
-      padding: 16px;
-    }
-    .cart-popover.active {
-      display: block;
-    }
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      margin: 8px 0;
-    }
-  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -85,7 +49,8 @@
           <article class="product-card reveal" data-category="breads">
             <div class="product-media">
               <img src="assets/img/sourdough.webp" alt="Ember Sourdough — seeded artisan loaves on a dark wooden counter" loading="lazy" width="900" height="598">
-              <button class="add-to-cart">
+              <span class="price-pill">$9.00</span>
+              <button class="add-to-cart" aria-label="Add Ember Sourdough to cart">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
                 Add to Cart
               </button>
@@ -97,29 +62,141 @@
             </div>
           </article>
           
-          <!-- Other product cards with add-to-cart buttons -->
+          <article class="product-card reveal" data-category="breads">
+            <div class="product-media">
+              <img src="assets/img/baguettes.webp" alt="French baguettes on a baking sheet" loading="lazy" width="900" height="600">
+              <span class="price-pill">$6.50</span>
+              <button class="add-to-cart" aria-label="Add Baguette to cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
+                Add to Cart
+              </button>
+            </div>
+            <div class="product-body">
+              <p class="tagline-tag">Classic French</p>
+              <h3>Fresh Baguette</h3>
+              <p>Crusty exterior, airy crumb. Best warmed with butter.</p>
+            </div>
+          </article>
+          
+          <article class="product-card reveal" data-category="pastries">
+            <div class="product-media">
+              <img src="assets/img/croissant.webp" alt="Golden croissant on a baking sheet" loading="lazy" width="900" height="720">
+              <span class="price-pill">$4.50</span>
+              <button class="add-to-cart" aria-label="Add Croissant au Beurre to cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
+                Add to Cart
+              </button>
+            </div>
+            <div class="product-body">
+              <p class="tagline-tag">Laminated over 3 days</p>
+              <h3>Croissant au Beurre</h3>
+              <p>Cultured butter folded through again and again, so it shatters exactly right.</p>
+            </div>
+          </article>
+          
+          <article class="product-card reveal" data-category="pastries">
+            <div class="product-media">
+              <img src="assets/img/cookies.webp" alt="Brown butter cookies on a plate" loading="lazy" width="900" height="600">
+              <span class="price-pill">$4.00</span>
+              <button class="add-to-cart" aria-label="Add Brown Butter Cookies to cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
+                Add to Cart
+              </button>
+            </div>
+            <div class="product-body">
+              <p class="tagline-tag">Brown butter</p>
+              <h3>Brown Butter Cookies</h3>
+              <p>Two chips of dark chocolate, NUT FREE (but still delicious).</p>
+            </div>
+          </article>
+          
+          <article class="product-card reveal" data-category="cakes">
+            <div class="product-media">
+              <img src="assets/img/cake.webp" alt="Slice of chocolate cake on a plate" loading="lazy" width="900" height="662">
+              <span class="price-pill">from $46</span>
+              <button class="add-to-cart" aria-label="Add Midnight Chocolate Cake to cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
+                Add to Cart
+              </button>
+            </div>
+            <div class="product-body">
+              <p class="tagline-tag">Celebrations</p>
+              <h3>Midnight Chocolate Cake</h3>
+              <p>Blackout cocoa, a whisper of espresso, whipped ganache. Whole cakes by pre-order.</p>
+            </div>
+          </article>
+          
+          <article class="product-card reveal" data-category="pastries">
+            <div class="product-media">
+              <img src="assets/img/cinnamon.webp" alt="Cinnamon rolls with glaze" loading="lazy" width="900" height="600">
+              <span class="price-pill">$5.50</span>
+              <button class="add-to-cart" aria-label="Add Cinnamon Swirl to cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
+                Add to Cart
+              </button>
+            </div>
+            <div class="product-body">
+              <p class="tagline-tag">Cinnamon & swirl</p>
+              <h3>Cinnamon Swirl</h3>
+              <p>Spiced dough ribboned with brown butter, glazed with cream cheese.</p>
+            </div>
+          </article>
+          
+          <article class="product-card reveal" data-category="deals">
+            <div class="product-media">
+              <img src="assets/img/display.webp" alt="Baker's Choice box with assorted items" loading="lazy" width="900" height="600">
+              <span class="price-pill">$24</span>
+              <button class="add-to-cart" aria-label="Add Baker's Choice Box to cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
+                Add to Cart
+              </button>
+            </div>
+            <div class="product-body">
+              <p class="tagline-tag">Baker's choice</p>
+              <h3>Baker's Choice Box</h3>
+              <p>Five of our best-loved items, chosen fresh each morning.</p>
+            </div>
+          </article>
+          
+          <article class="product-card reveal" data-category="breads">
+            <div class="product-media">
+              <img src="assets/img/donut.webp" alt="Glazed donut with icing" loading="lazy" width="900" height="600">
+              <span class="price-pill">$3.50</span>
+              <button class="add-to-cart" aria-label="Add Classic Glaze Donut to cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19v-4h-2v4h-2v-6h4v6zm-4-8h-2v4h2v-4zM5 21h14c-.55-1.24-1.55-2.33-3-3.14V5H8v2H5v15zm11-3h-2V8h2v10z"/></svg>
+                Add to Cart
+              </button>
+            </div>
+            <div class="product-body">
+              <p class="tagline-tag">Morning treat</p>
+              <h3>Classic Glaze Donut</h3>
+              <p>Fruit-sweetened glaze, yeast-raised dough. Warmed to order.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
   
-  <button class="cart-icon" id="cart-btn">
+  <button class="cart-icon" id="cart-btn" aria-label="View cart with 0 items">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4-5 6.5-5 11a5 5 0 0 0 10 0c0-2.2-1.2-3.8-2.4-5.4-.3 1.7-1.1 2.6-2 3C13.3 8 13 4.8 12 2z"/></svg>
-    <span id="cart-count" class="cart-count"></span>
+    <span id="cart-count" class="cart-count" aria-hidden="true">0</span>
   </button>
   
-  <div class="cart-popover" id="cart-popover">
+  <div class="cart-popover" id="cart-popover" aria-label="Shopping cart">
     <h3>Your Cart</h3>
     <div id="cart-items" class="cart-items">
-      <!-- Cart items will be inserted here -->
+      <p class="empty-cart">Your cart is empty</p>
     </div>
-    <p id="cart-total"></p>
+    <div class="cart-total">
+      <span>Total:</span>
+      <span>$0.00</span>
+    </div>
     <a class="btn btn-primary" href="contact.html#order">Proceed to Checkout</a>
   </div>
   
   <script src="assets/js/site-components.js" defer></script>
-  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/cart.js" defer></script>
   <script src="assets/js/main.js" defer></script>
-<script src="https://js.stripe.com/v3"></script>
 </body>
 </html>
